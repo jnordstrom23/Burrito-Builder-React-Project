@@ -7,11 +7,13 @@ import ChatIcon from "@mui/icons-material/Chat";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
 import ExpandMoreOutlined from "@mui/icons-material/ExpandMoreOutlined";
+import { useStateValue } from "./StateProvider";
 
 function Sidebar() {
+  const [{user}, dispatch] = useStateValue();
     return (
       <div className='sidebar'>
-          <SidebarRow src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4OWPGVnuBmE_iOMgSZsdPvTrRmVU-Qp5g3A&usqp=CAU' title= 'Mark Z.' />
+          <SidebarRow src={user.photoURL} title= {user.displayName} />
   
           <SidebarRow Icon={EmojiFlagIcon} title='Pages'/>
           <SidebarRow Icon={PeopleIcon}title='Friends'/>

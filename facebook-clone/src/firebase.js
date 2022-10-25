@@ -1,10 +1,14 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// I used Firebase JS SDK 9 with compat version 8
 
-import firebase from "firebase";
+import firebase from "firebase/compat/app";
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCUBf1C_NJrJKwubYazwJCmeyKNF_nmRTU",
     authDomain: "facebook-clone-54321.firebaseapp.com",
+    databaseURL: "https://facebook-clone-54321.firebaseio.com",
     projectId: "facebook-clone-54321",
     storageBucket: "facebook-clone-54321.appspot.com",
     messagingSenderId: "756027158374",
