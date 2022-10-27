@@ -4,6 +4,7 @@ import {Avatar} from "@mui/material"
 import VideocamIcon from "@mui/icons-material/VideoCameraBack"
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary"
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon"
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import {useStateValue} from "./StateProvider";
 import db from "./firebase"
 import firebase from "firebase/compat/app"
@@ -43,7 +44,7 @@ function MessageSender() {
                     value={imageUrl}
                     onChange={e=> setImageUrl(e.target.value)}
                     placeholder="image URL (Optional)"/>
-                <button onClick={handleSubmit} type="submit">Hidden submit</button>
+                <button onClick={handleSubmit} type="submit">Share</button>
             </form>
         </div>
 

@@ -60,6 +60,6 @@
     border-radius: 10px;
 }
 
-/*.post__image > img {
-    width: 100%
-}*/
+.post__image > img {
+    width: 100%;
+}

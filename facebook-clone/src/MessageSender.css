@@ -30,18 +30,23 @@
 }
 
 .messageSender__top > form > button {
-    display: none;
+   border-radius: 999px; 
+   background-color: #2e81f4;
+   color: whitesmoke;
+   width: 75px;
+   font-size: medium;
+   font-weight: bold;
+   border: none;
 }
+.messageSender__top > form > button:hover {
+    background-color: #eff2f5;
+    color:black;
+ }
 
 .messageSender__input {
     flex:1;
 }
 
-@media (max-width:1200px) {
-    .messageSender__top > form > button {
-        display: visible;
-    }
-}
 
 .messageSender__bottom {
     display: flex;
