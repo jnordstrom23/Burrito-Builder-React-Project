@@ -2,13 +2,17 @@ import React from 'react'
 import "./Story.css"
 import {Avatar} from "@mui/material"
 
-function Story({image, profileSrc, title}) {
-  return <div style = {{backgroundImage: "url(" + image + ")"}} className= "story">
-    <Avatar className="story__avatar"src={profileSrc} />
-    <h4>{title}</h4>
+function Story({image, profilePic, username}) {
 
-  </div>;
-  
+
+  return(
+  <div className="story__container">
+    <div style = {{backgroundImage: "url(" + image + ")"}} className= "story">
+      <Avatar className="story__avatar"src={profilePic} />
+        <h4>{username}</h4>
+
+  </div>
+  </div>);
 }
 
 export default Story

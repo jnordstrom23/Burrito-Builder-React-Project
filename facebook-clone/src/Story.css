@@ -1,3 +1,11 @@
+
+.story__container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
 .story {
     position: relative;
     background-position: center center;
@@ -11,6 +19,7 @@
     transition: transform 100ms ease-in;
     cursor: pointer;
 }
+
 
 .story:hover {
     transform: scale(1.07);

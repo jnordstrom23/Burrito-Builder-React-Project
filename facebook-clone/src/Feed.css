@@ -1,8 +1,22 @@
 .feed {
     flex:1;
     padding: 30px 150px;
+    padding-right: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    max-width: 800px;
+    min-width: 600px;
+}
+
+.storyreel {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.storyreel::-webkit-scrollbar {
+    display: none;
 }

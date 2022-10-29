@@ -4,6 +4,7 @@ import StoryReel from "./StoryReel"
 import MessageSender from './MessageSender';
 import Post from './Post';
 import db from "./firebase";
+import Story from './Story';
 
 function Feed() {
   const [posts, setPosts] = useState([]);
@@ -21,7 +22,20 @@ function Feed() {
   console.log(posts)
   return (
     <div className="feed">
-     <StoryReel />
+      <div className="storyreel">
+    {
+        posts.map((post)=>(
+          <StoryReel
+            key= {post.data.id}
+            profilePic ={post.data.profilePic}
+            image ={post.data.image}
+            message={post.data.message}
+            username={post.data.username}
+              />
+              ))
+            }  
+             </div>
+
       <MessageSender />
 
        {
