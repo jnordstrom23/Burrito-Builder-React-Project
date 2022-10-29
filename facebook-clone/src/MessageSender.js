@@ -14,6 +14,8 @@ function MessageSender() {
     const [{user}, dispatch] = useStateValue();
     const [input, setInput] = useState('');
     const [imageUrl, setImageUrl] = useState("")
+    const [checked, setChecked] = useState("")
+
 
     const handleSubmit =(e) =>{
         e.preventDefault()
@@ -23,7 +25,8 @@ function MessageSender() {
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             profilePic: user.photoURL,
             username : user.displayName,
-            image: imageUrl
+            image: imageUrl,
+            checked: checked
         })
     
         setImageUrl("")
@@ -43,7 +46,12 @@ function MessageSender() {
                 <input 
                     value={imageUrl}
                     onChange={e=> setImageUrl(e.target.value)}
-                    placeholder="image URL (Optional)"/>
+                    placeholder="image URL (Optional)"/> 
+                <input 
+                    className="checkmark"
+                    type = "checkbox"
+                    checked = {checked}
+                    onChange={e=> setChecked(e.target.checked)} />
                 <button onClick={handleSubmit} type="submit">Share</button>
             </form>
         </div>
