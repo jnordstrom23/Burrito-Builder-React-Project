@@ -4,7 +4,7 @@ import {Avatar} from "@mui/material"
 
 function Story({image, profilePic, username, checked}) {
 
-if (checked == true) {
+if (checked === true) {
 
   return(
   <div className="story__container">
