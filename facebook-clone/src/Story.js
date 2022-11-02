@@ -2,8 +2,9 @@ import React from 'react'
 import "./Story.css"
 import {Avatar} from "@mui/material"
 
-function Story({image, profilePic, username}) {
+function Story({image, profilePic, username, checked}) {
 
+if (checked == true) {
 
   return(
   <div className="story__container">
@@ -13,6 +14,6 @@ function Story({image, profilePic, username}) {
 
   </div>
   </div>);
-}
+}}
 
 export default Story

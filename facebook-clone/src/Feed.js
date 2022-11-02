@@ -20,20 +20,22 @@ function Feed() {
   }, [])
 
   console.log(posts)
+
   return (
     <div className="feed">
       <div className="storyreel">
-    {
-        posts.map((post)=>(
-          <StoryReel
-            key= {post.data.id}
-            profilePic ={post.data.profilePic}
-            image ={post.data.image}
-            message={post.data.message}
-            username={post.data.username}
-              />
-              ))
-            }  
+      {
+    posts.map((post)=>(
+       <StoryReel
+         key= {post.data.id}
+         profilePic ={post.data.profilePic}
+         image ={post.data.image}
+         message={post.data.message}
+         username={post.data.username}
+         checked={post.data.checked}
+           />
+           ))
+         }
              </div>
 
       <MessageSender />
