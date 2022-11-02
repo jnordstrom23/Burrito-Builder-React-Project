@@ -47,11 +47,15 @@ function MessageSender() {
                     value={imageUrl}
                     onChange={e=> setImageUrl(e.target.value)}
                     placeholder="image URL (Optional)"/> 
+                    <h3 className="add__story">Story? </h3>
+                <label className="custom-checkbox">
                 <input 
                     className="checkmark"
                     type = "checkbox"
                     checked = {checked}
                     onChange={e=> setChecked(e.target.checked)} />
+                    <span></span>
+                    </label>
                 <button onClick={handleSubmit} type="submit">Share</button>
             </form>
         </div>

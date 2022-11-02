@@ -72,3 +72,39 @@
     border-radius: 20px;
 }
 
+.add__story {
+    font-size: medium;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+
+
+.custom-checkbox input {
+    display: none;
+  }
+  
+  .custom-checkbox span {
+    border: 3px solid gray;
+    float: right;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    margin-top: 5px;
+  }
+  
+  .custom-checkbox:hover span,
+  .custom-checkbox input:checked + span {
+    border: 3px solid #2e81f4;
+    background-color: #2e81f4;
+  }
+  
+  .custom-checkbox input:checked + span:before {
+    content: "✔";
+    color: white;
+  }
