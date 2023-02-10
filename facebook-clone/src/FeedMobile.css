@@ -1,0 +1,19 @@
+.feedmobile{
+    margin-top: 25%;
+    display: grid;
+	align-items: center;
+	justify-content: center;
+	height: 50vh;
+}
+
+.storyreel2 {
+    margin-bottom: 15%;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.storyreel::-webkit-scrollbar {
+    display: none;
+}

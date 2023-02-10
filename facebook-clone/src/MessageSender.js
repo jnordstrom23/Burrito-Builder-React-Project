@@ -56,7 +56,7 @@ function MessageSender() {
                     onChange={e=> setChecked(e.target.checked)} />
                     <span></span>
                     </label>
-                <button onClick={handleSubmit} type="submit">Share</button>
+                <button onClick={handleSubmit} type="submit">Post</button>
             </form>
         </div>
 
