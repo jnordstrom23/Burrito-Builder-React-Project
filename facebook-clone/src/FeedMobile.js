@@ -22,6 +22,7 @@ function FeedMobile() {
   console.log(posts)
 
   return (
+<div className = "mobilewrapper">
     <div className="feedmobile">
       <div className="storyreel2">
       {
@@ -52,6 +53,7 @@ function FeedMobile() {
           />
         ))
        }
+    </div>
     </div>
   )
 }

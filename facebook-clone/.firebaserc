@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "facebook-clone-54321"
-  }
+    "default": "facebook-clone-54321",
+    "Facebook Clone": "facebook-clone-54321"
+  },
+  "targets": {},
+  "etags": {}
 }
