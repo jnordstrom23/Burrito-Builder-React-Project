@@ -8,6 +8,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import {useStateValue} from "./StateProvider";
 import db from "./firebase"
 import firebase from "firebase/compat/app"
+import Modal from 'react-modal'
 
 
 function MessageSender() {
@@ -15,6 +16,16 @@ function MessageSender() {
     const [input, setInput] = useState('');
     const [imageUrl, setImageUrl] = useState("")
     const [checked, setChecked] = useState("")
+
+    const[OpenModal, setOpenModal] = useState(false);
+
+    const setOpenModalAsTrue =()=>{
+        setOpenModal(true)
+    }
+
+    const setOpenModalAsFalse =()=>{
+        setOpenModal(false)
+    };
 
 
     const handleSubmit =(e) =>{
@@ -34,30 +45,22 @@ function MessageSender() {
       }
 
   return (
+    <form>
     <div className="messageSender">
         <div className="messageSender__top">
             <Avatar src={user.photoURL}/>
-            <form>
                 <input 
                     value={input}
                     onChange={e => setInput(e.target.value)}
                     className="messageSender__input" 
                     placeholder= {"What's on your mind, "+ user.displayName +" ?"}/>
                 <input 
+                    
                     value={imageUrl}
                     onChange={e=> setImageUrl(e.target.value)}
                     placeholder="image URL (Optional)"/> 
-                    <h3 className="add__story">Story? </h3>
-                <label className="custom-checkbox">
-                <input 
-                    className="checkmark"
-                    type = "checkbox"
-                    checked = {checked}
-                    onChange={e=> setChecked(e.target.checked)} />
-                    <span></span>
-                    </label>
-                <button onClick={handleSubmit} type="submit">Post</button>
-            </form>
+
+               
         </div>
 
         <div className="messageSender__bottom">
@@ -66,18 +69,40 @@ function MessageSender() {
                 <VideocamIcon style= {{color: "red"}} />
                 <h3>Live Video</h3>
             </div>
+            
             <div className="messageSender__option">
-                <PhotoLibraryIcon style= {{color: "green"}} />
+                <PhotoLibraryIcon onClick={setOpenModalAsTrue} style= {{color: "green"}} />
                 <h3>Photo/Video</h3>
             </div>
-            <div className="messageSender__option">
-                <InsertEmoticonIcon style= {{color: "orange"}} />
-                <h3>Feeling/Activity</h3>
+            
+            <Modal isOpen={OpenModal} className="modal__fileSelecter">
+            <div class= "modal-card">
+                <input 
+                    className= "modal___input"
+                    type= "file"
+                    accept= "file"
+                />
+                </div>
+            </Modal>
+        <div className="messageSender__option2">
+            
+                <label className="custom-checkbox">
+                <input 
+                    className="checkmark"
+                    type = "checkbox"
+                    checked = {checked}
+                    onChange={e=> setChecked(e.target.checked)} />
+                    <span></span> 
+                    </label>
+                    <h3 className="add__story">Add Story? </h3>
+                <button className="formButton" onClick={handleSubmit} type="submit">Post</button>
+                </div>
             </div>
+            
 
         </div>
 
-    </div>
+    </form>
   )
 }
 
